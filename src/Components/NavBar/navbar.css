@@ -24,13 +24,10 @@
 
 .navbar-center .search-container {
     display: none;
+    font-size: 20px;
     border: 1px solid #015C92;
     border-radius: 5px;
     padding: 5px;
-}
-
-.search-container img {
-    width: 20px;
 }
 
 .search-container input {

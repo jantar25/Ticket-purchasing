@@ -1,0 +1,11 @@
+.shows-container {
+    padding: 0 5%;
+}
+
+.shows-container h3 {
+    color: #015C92;
+}
+
+.shows-container hr {
+    border: 1px solid rgb(226, 224, 224);
+}

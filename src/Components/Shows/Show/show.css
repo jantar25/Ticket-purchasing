@@ -1,0 +1,109 @@
+.show-container {
+    padding: .5rem 1rem;
+}
+
+.show-card {
+    background: #fcfcfd;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+.show-container .show-visible {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.show-container .show-clickable {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.show-container .show-clickable:hover {
+    cursor: pointer;
+}
+
+.show-clickable .icon {
+    display: none;
+}
+
+.info-container .date {
+    display: flex;
+    align-items: center;
+}
+
+.info-container .date h5 {
+    margin: 5px;
+    color: rgb(231, 152, 5);
+}
+
+.info-container p {
+    margin: 5px;
+    color: gray;
+}
+
+
+.info-container .info h4 {
+    margin: 5px;
+    color: #015C92;
+}
+
+.info-container .info h6 {
+    margin: 5px;
+    font-weight: 600;
+}
+
+.show-visible button {
+    display: none;
+    color: #fff;
+    background: #015C92;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.show-hiden button {
+    color: #fff;
+    background: #015C92;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 2px;
+    cursor: pointer; 
+}
+
+@media only screen and (min-width: 768px) {
+    .show-clickable .icon {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 1.5rem;
+        color: #015C92;
+    }
+    .show-visible button {
+        display: flex;
+    }
+    .show-clickable .icon-end {
+        display: none;
+    }
+    .show-clickable .info-container {
+        flex: 8;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .info-container .date {
+        flex: 1;
+        flex-direction: column;
+        align-items: start;
+    }
+    .info-container .info {
+        flex: 3;
+    }
+
+    .show-hiden button {
+        display: none;
+    }
+}

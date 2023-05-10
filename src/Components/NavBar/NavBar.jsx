@@ -1,7 +1,7 @@
 import React from 'react'
+import {AiOutlineSearch} from 'react-icons/ai'
 
 import './navbar.css'
-import searchIcon from '../../Assets/search.svg'
 
 const NavBar = () => {
   return (
@@ -11,7 +11,7 @@ const NavBar = () => {
         </div>
         <div className='navbar-center'>
             <div className='search-container'>
-                <img src={searchIcon} alt='search-icon' />
+                <AiOutlineSearch />
                 <input type='text' placeholder='Search...' />
             </div>
             <ul>
