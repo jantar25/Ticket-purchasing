@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { AiOutlinePlus,AiOutlineMinus } from 'react-icons/ai';
 import { BsThreeDotsVertical,BsStarFill } from 'react-icons/bs'
 import { FaCity,FaMedal } from 'react-icons/fa'
@@ -28,7 +29,9 @@ const Show = ({ticket,toggleAccordion,clicked}) => {
                     <BsThreeDotsVertical />
                 </div>
             </div>
-            <button>See Ticket</button>
+            <Link to={`/ticket/${ticket.id}`} target="_blank">
+                <button>See Ticket</button>
+            </Link>
         </div>
         <div>
             {clicked === ticket.id ? 
@@ -82,7 +85,9 @@ const Show = ({ticket,toggleAccordion,clicked}) => {
                         )}
                     </div>
                 </div>
-                <button>See Ticket</button>
+                <Link to={`/ticket/${ticket.id}`} target="_blank">
+                    <button>See Ticket</button>
+                </Link>
             </div> 
             : null}
         </div>
