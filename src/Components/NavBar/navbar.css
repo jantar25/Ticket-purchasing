@@ -1,0 +1,94 @@
+.navbar-container {
+    height: 80px;
+    position: sticky;
+    top: 0;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #015C92;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+    z-index: 10;
+}
+
+.navbar-left .logo {
+    display: none;
+    color: rgb(231, 152, 5);
+}
+
+.navbar-center {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+} 
+
+.navbar-center .search-container {
+    display: none;
+    border: 1px solid #015C92;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.search-container img {
+    width: 20px;
+}
+
+.search-container input {
+    border: none;
+    padding: 5px 2px;
+}
+
+.search-container input:focus {
+    outline: none;
+}
+
+.navbar-center ul {
+    display: none;
+    list-style: none;
+    font-size: 20px;
+}
+
+.navbar-center ul li {
+    margin: 0 5px;
+}
+
+.navbar-right button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    background:#015C92;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.navbar-right span {
+    display: none;
+}
+
+@media only screen and (min-width: 350px) {
+    .navbar-left .logo{
+        display: inline;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    .navbar-right span {
+        display: inline;
+    }
+}
+
+@media only screen and (min-width: 650px) {
+    .navbar-center ul {
+        display: flex;
+    }
+}
+
+@media only screen and (min-width: 940px) {
+    .navbar-center .search-container {
+        display: flex;
+        align-items: center;
+    }
+}
+

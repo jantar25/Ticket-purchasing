@@ -1,7 +1,9 @@
-
+import NavBar from "./Components/NavBar/NavBar";
 function App() {
   return (
-    <div className="App">Ticket purchasing</div>
+    <div className="App">
+      <NavBar />
+    </div>
   );
 }
 
