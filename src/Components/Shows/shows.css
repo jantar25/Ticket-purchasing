@@ -1,5 +1,6 @@
 .shows-container {
     padding: 0 5%;
+    min-height: calc(100vh - 90px);
 }
 
 .shows-container h3 {
