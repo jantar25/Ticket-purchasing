@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
 
-import Tickets from './Pages/Tickets';
-import SingleTickect from './Pages/SingleTickect';
+import Tickets from './Pages/ShowsTickeks/Tickets';
+import SingleTickect from './Pages/SingleShow/SingleTickect';
 import Navbar from './Components/NavBar/NavBar'
 import Footer from './Components/Footer/Footer'
 
