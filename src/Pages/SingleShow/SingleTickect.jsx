@@ -1,7 +1,9 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 
+
 import tickets from '../../Constants/ticketsData'
+import PriceAndModal from '../../Components/PriceAndModal/PriceAndModal'
 import './singleTicket.css'
 
 
@@ -9,6 +11,7 @@ const SingleTickect = () => {
     const location = useLocation()
     const currentShowId = location.pathname.split('/')[2]
     const currentShow = tickets.find(ticket => ticket.id === Number(currentShowId))
+
 
   return (
     <div className='single-show-container'>
@@ -25,13 +28,7 @@ const SingleTickect = () => {
           <h4>Book a seat with:</h4>
           <div className='tickets'>
             {currentShow.priceByPosition.map((position,index) =>
-            <div className='ticket' key={index}>
-              <h4>
-                {Object.keys(position)}
-                <span> Ticket cost: </span>
-              </h4> 
-              <h3>${Object.values(position)}</h3>
-            </div>
+              <PriceAndModal key={index} position={position} />
             )}
           </div>
         </div>
