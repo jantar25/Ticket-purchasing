@@ -1,5 +1,4 @@
-
-.tickets .ticket {
+.ticket {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -10,12 +9,12 @@
     cursor: pointer;
 }
 
-.tickets .ticket h3 {
+.ticket h3 {
     margin: 0 0 0 .5rem;
     color: rgb(231, 152, 5);
 }
 
-.tickets .ticket h4 {
+.ticket h4 {
     margin: 0 .5rem 0 0;
 }
 
@@ -31,16 +30,15 @@
 }
 
 .modal-cover {
-    background: #505050;
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .modal-container .modal {
     position: absolute;
-    top: 3rem;
+    top: 5rem;
     left: 0;
     right: 0;
-    bottom: 3rem;
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
     background: #fff;
     border-radius: 5px;
@@ -50,6 +48,7 @@
 
 .modal .content {
     position: relative;
+    padding: 2rem;
 }
 
 .modal .close {
@@ -62,6 +61,91 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(158, 4, 4);
+    background: rgb(192, 14, 14);
     color: #fff;
+    border: none;
+}
+
+.counter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.counter-container .minus,.plus {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    border-radius: 50%;
+    background: gray;
+    font-size: 30px;
+    color: #fff;
+}
+
+.counter-container .plus {
+    background: #015C92;
+}
+
+.counter-container h3 {
+    margin: 0;
+    color: rgb(231, 152, 5);
+}
+
+.content .head {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.content .subtotal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content .subtotal h6,h5 {
+    margin: 0;
+}
+
+.content .subtotal h6 {
+    color: gray;
+}
+
+.content span {
+    font-size: 15px;
+    color: gray;
+}
+
+.content p {
+    font-size: 18px;
+}
+
+.content .send {
+    width: 100%;
+    font-size: 20px;
+    padding: .5rem 2rem;
+    border: none;
+    background: green;
+    color: #fff;
+}
+
+@media only screen and (min-width: 600px) {
+    .modal-container .modal {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .modal-container .modal {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .modal-container .modal {
+        width: 30%;
+    }
 }
