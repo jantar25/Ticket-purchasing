@@ -12,7 +12,6 @@ const SingleTickect = () => {
     const currentShowId = location.pathname.split('/')[2]
     const currentShow = tickets.find(ticket => ticket.id === Number(currentShowId))
 
-
   return (
     <div className='single-show-container'>
         <div className='single-show-info'>

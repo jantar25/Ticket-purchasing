@@ -64,6 +64,7 @@
     background: rgb(192, 14, 14);
     color: #fff;
     border: none;
+    cursor: pointer;
 }
 
 .counter-container {
@@ -84,6 +85,7 @@
     background: gray;
     font-size: 30px;
     color: #fff;
+    cursor: pointer;
 }
 
 .counter-container .plus {
@@ -130,6 +132,7 @@
     border: none;
     background: green;
     color: #fff;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 600px) {
