@@ -20,12 +20,6 @@ const PriceAndModal = ({position,currentShow}) => {
       }
     }
 
-    if(toggleModal){
-      document.body.classList.add('overflow-hidden')
-    } else  {
-        document.body.classList.remove('overflow-hidden')
-    }
-
     const handleOrder = () => {
       setOrder({
         numberOfTickect:counter,
@@ -35,7 +29,14 @@ const PriceAndModal = ({position,currentShow}) => {
         ticketshowlocation:`${currentShow.location}/${currentShow.city}`,
         ticketshowtime:`${currentShow.date} at ${currentShow.time}`
       })
+      document.body.classList.remove('overflow-hidden')
       navigate("/checkout")
+    }
+
+    if(toggleModal){
+      document.body.classList.add('overflow-hidden')
+    } else  {
+        document.body.classList.remove('overflow-hidden')
     }
 
   return (
