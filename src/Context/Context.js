@@ -8,7 +8,9 @@ export const ContextProvider = ({ children }) => {
             numberOfTickect:0,
             ticketClass:'',
             ticketPrice:'',
-            ticketInfo:''
+            ticketartist:'',
+            ticketshowlocation:'',
+            ticketshowtime:'',
         });
 
     return (

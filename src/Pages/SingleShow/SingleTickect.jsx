@@ -31,7 +31,7 @@ const SingleTickect = () => {
             <h4>Book a seat with:</h4>
             <div className='tickets'>
               {currentShow.priceByPosition.map((position,index) =>
-                <PriceAndModal key={index} position={position} />
+                <PriceAndModal key={index} position={position} currentShow={currentShow} />
               )}
             </div>
           </div>

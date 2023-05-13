@@ -1,0 +1,57 @@
+.checkout-container {
+    min-height: calc(50vh - 90px);
+    padding: 2rem 5%;
+    display:flex;
+    flex-direction: column;
+}
+
+.checkout-container .ticket-info {
+    margin-bottom: 1rem;
+}
+
+.checkout-container .ticket-info h4 {
+    margin: 0 0 .5rem 0;
+}
+.checkout-container .ticket-info p {
+    margin: 0;
+    color: gray;
+}
+
+.checkout-container .ticket-info p span {
+    margin-right: .4rem;
+    color: #015C92;
+    font-weight: 600;
+}
+
+.checkout-container .delivery-container {
+    padding: .5rem;
+    border: 1px solid rgb(196, 193, 193);
+    border-radius: 5px;
+}
+
+.checkout-container .delivery-container .title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: .5rem;
+}
+
+.checkout-container .delivery-container .title h3 {
+    margin: 0 .4rem 0 0;
+}
+
+.checkout-container .delivery-container .title .icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid green;
+    border-radius: 50%;
+    color: green;
+    font-size: 20px;
+}
+
+.checkout-container .delivery-container p {
+    color: gray;
+}

@@ -5,7 +5,7 @@ import { AiOutlineClose,AiOutlinePlus,AiOutlineMinus } from 'react-icons/ai'
 import { useSetOrderContext } from '../../Context/Context'
 import './priceModal.css'
 
-const PriceAndModal = ({position}) => {
+const PriceAndModal = ({position,currentShow}) => {
     const [toggleModal,setToggleModal] = useState(false);
     const [counter,setCounter] = useState(1);
     const setOrder = useSetOrderContext()
@@ -31,7 +31,9 @@ const PriceAndModal = ({position}) => {
         numberOfTickect:counter,
         ticketClass:Object.keys(position),
         ticketPrice:Object.values(position),
-        ticketInfo:''
+        ticketartist:currentShow.artist,
+        ticketshowlocation:`${currentShow.location}/${currentShow.city}`,
+        ticketshowtime:`${currentShow.date} at ${currentShow.time}`
       })
       navigate("/checkout")
     }
