@@ -1,11 +1,15 @@
 import React,{useState} from 'react'
+import {  useNavigate } from "react-router"
 import { AiOutlineClose,AiOutlinePlus,AiOutlineMinus } from 'react-icons/ai'
 
+import { useSetOrderContext } from '../../Context/Context'
 import './priceModal.css'
 
 const PriceAndModal = ({position}) => {
     const [toggleModal,setToggleModal] = useState(false);
     const [counter,setCounter] = useState(1);
+    const setOrder = useSetOrderContext()
+    const navigate = useNavigate()
 
     const plusCounter = () => {
       setCounter(counter + 1)
@@ -22,12 +26,22 @@ const PriceAndModal = ({position}) => {
         document.body.classList.remove('overflow-hidden')
     }
 
+    const handleOrder = () => {
+      setOrder({
+        numberOfTickect:counter,
+        ticketClass:Object.keys(position),
+        ticketPrice:Object.values(position),
+        ticketInfo:''
+      })
+      navigate("/checkout")
+    }
+
   return (
       <div>
         <div className='ticket' onClick={()=>setToggleModal(!toggleModal)}>
         <h4>
           {Object.keys(position)}
-          <span> Ticket cost: </span>
+          <span> Ticket: </span>
         </h4> 
         <h3>${Object.values(position)}</h3>
       </div>
@@ -55,7 +69,7 @@ const PriceAndModal = ({position}) => {
                       </div>
                       <p>{counter} Ticket{counter>1 && 's'}</p>
                     </div>
-                    <button className='send'>Next</button>
+                    <button onClick={handleOrder} className='send'>Next</button>
                 </div>
             </div>
           </div>
