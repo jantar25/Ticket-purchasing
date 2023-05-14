@@ -1,0 +1,69 @@
+.card-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: #eee;
+    border-radius: 5px;
+    padding: .5rem;
+}
+
+.card-container .creditCard {
+    margin-left: .5rem;
+}
+
+.creditCard .cardInfo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+}
+
+.cardInfo .content {
+    margin-left: .5rem;
+}
+
+.cardInfo .content h4 {
+    margin: 0;
+}
+
+.cardInfo .content p {
+    margin: .2rem 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: gray;
+}
+
+.content .buttons span {
+    color: #015C92;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cardCode-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.cardCode-container .cardCode-text {
+    display: flex;
+    align-items: center;
+}
+
+.cardCode-container .cardCode-text input {
+    padding: .5rem;
+}
+
+.cardCode-container .cardCode-text .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: gray;
+    margin: 0 .3rem;
+}
+
+.cardCode-container .cardCode-text p {
+    margin: 0;
+    font-size: 12px;
+}

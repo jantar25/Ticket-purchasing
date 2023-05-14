@@ -6,7 +6,7 @@ const creditCardInfos = [
         cardType: 'VISA',
         cardNumber: '999',
         username: 'Gloire',
-        expirationDate: '12/2023',
+        expirationDate: '12/23',
         image:Visa
     }
 ]
