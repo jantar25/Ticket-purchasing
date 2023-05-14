@@ -30,7 +30,7 @@ const Show = ({ticket,toggleAccordion,clicked}) => {
                 </div>
             </div>
             <Link to={`/ticket/${ticket.id}`} target="_blank" style={{textDecoration: 'none'}}>
-                <button onClick={() => toggleAccordion(ticket.id)}>See Ticket</button>
+                <button>See Ticket</button>
             </Link>
         </div>
         <div>

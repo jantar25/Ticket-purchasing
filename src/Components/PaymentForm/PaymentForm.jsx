@@ -4,12 +4,18 @@ import {BsCreditCard2Front} from 'react-icons/bs'
 import {ImCreditCard} from 'react-icons/im'
 import { AiOutlinePlus } from 'react-icons/ai';
 
+import { useSetCardInfoContext,useCardInfoContext } from '../../Context/Context';
 import pay3Img from '../../Assets/pay3.png'
+import Visa from '../../Assets/visa.PNG'
 import './paymentForm.css'
 
 const PaymentForm = ({handleToggleForm}) => {
+  const cardInfos = useCardInfoContext()
+  const setCardInfo = useSetCardInfoContext()
   const [toggleAddress2,setToggleAddress2] = useState(false)
   const [inputs,setInputs] = useState({
+    cardType: 'VISA',
+    image:Visa,
     CardName:'',
     cardNumber:'',
     cardExpiration:'',
@@ -29,10 +35,16 @@ const PaymentForm = ({handleToggleForm}) => {
     setInputs({...inputs,[e.target.name]:e.target.value})
   }
 
+  const {CardName,cardNumber,cardExpiration} = inputs
+
   const handleSubmitForm = (e) => {
     e.preventDefault()
-    console.log(inputs)
-    handleToggleForm()
+    if (!CardName || !cardNumber || !cardExpiration) {
+      console.log('Fill the every field of the form')
+    } else {
+      setCardInfo([...cardInfos,inputs])
+      handleToggleForm()
+    }
   }
 
   return (

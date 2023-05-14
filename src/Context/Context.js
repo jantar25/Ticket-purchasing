@@ -1,5 +1,7 @@
 import React, { createContext, useState,useContext } from "react"
 
+import Visa from '../Assets/visa.PNG'
+
 const OrderContext = createContext()
 const SetOrderContext = createContext()
 
@@ -15,21 +17,26 @@ export const ContextProvider = ({ children }) => {
             ticketshowlocation:'',
             ticketshowtime:'',
         });
-    const [cardInfo,setCardInfo] = useState({
-            CardName:'',
-            cardNumber:'',
-            cardExpiration:'',
-            cardCode:'',
-            country:'',
-            address:'',
-            address2:'',
-            city:'',
+    const [cardInfo,setCardInfo] = useState([
+        {
+            cardType: 'VISA',
+            image:Visa,
+            CardName:"Glody",
+            cardNumber:"999008",
+            cardExpiration:"12/23",
+            cardCode:"123",
+            country:"Rwanda",
+            address:"Gisozi",
+            address2:'Gasabo',
+            city:"Kigali",
             state:true,
-            postalCode:'',
-            phoneNumber:'',
-            isForFutureUse:false,
-            isForBuyTickets:false
-        })
+            postalCode:'00000',
+            phoneNumber:"0785348372",
+            isForFutureUse:"on",
+            isForBuyTickets:"off",
+            
+        }
+    ])
 
     return (
         <SetOrderContext.Provider value={setOrder}>
@@ -46,4 +53,7 @@ export const ContextProvider = ({ children }) => {
 
 export const useOrderContext = () => useContext(OrderContext)
 export const useSetOrderContext = () => useContext(SetOrderContext)
+
+export const useCardInfoContext = () => useContext(CardInfoContext)
+export const useSetCardInfoContext = () => useContext(SetCardInfoContext)
 

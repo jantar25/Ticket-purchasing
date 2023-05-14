@@ -1,13 +1,15 @@
 import React from 'react'
 
+import { useCardInfoContext } from '../../Context/Context'
 import CreditCard from './CreditCard/CreditCard'
-import creditCardInfos from '../../Constants/creditCardInfos'
 
 const CreditCards = () => {
+  const cardInfos = useCardInfoContext()
   return (
     <div>
-        {creditCardInfos.map(creditCardInfo => 
-        <CreditCard key={creditCardInfo.id} creditCardInfo={creditCardInfo} />)}
+        {cardInfos.map((creditCardInfo,index) => 
+            <CreditCard key={index} creditCardInfo={creditCardInfo} />
+        )}
     </div>
   )
 }

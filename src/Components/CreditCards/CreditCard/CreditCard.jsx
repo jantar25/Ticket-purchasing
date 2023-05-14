@@ -6,13 +6,13 @@ import './creditcard.css'
 const CreditCard = ({creditCardInfo}) => {
   return (
     <div className='card-container'>
-      <input type='radio' name={creditCardInfo.username} value={creditCardInfo.cardNumber} />
+      <input type='radio' name={creditCardInfo.CardName} value={creditCardInfo.cardNumber} />
       <div className="creditCard">
         <div className='cardInfo'>
-          <img src={creditCardInfo.image} alt={creditCardInfo.username} />
+          <img src={creditCardInfo.image} alt={creditCardInfo.CardName} />
           <div className='content'>
             <h4>{creditCardInfo.cardType} - {creditCardInfo.cardNumber}</h4>
-            <p>{creditCardInfo.username} | {creditCardInfo.expirationDate}</p>
+            <p>{creditCardInfo.CardName} | {creditCardInfo.cardExpiration}</p>
             <div className='buttons'>
               <span>Edit</span> | <span>Delete</span>
             </div>
