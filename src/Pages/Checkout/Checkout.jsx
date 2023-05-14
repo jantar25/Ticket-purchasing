@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { MdDone } from 'react-icons/md'
 import {BsCreditCard2Front} from 'react-icons/bs'
 import { AiOutlinePlus,AiOutlineMinus } from 'react-icons/ai';
-import { IoIosArrowUp,IoIosArrowDown } from 'react-icons/io';
+
 
 import { useOrderContext } from '../../Context/Context'
 import NavBar from '../../Components/NavBar/NavBar'
+import Billing from '../../Components/Billing/Billing';
 import pay1Img from '../../Assets/pay1.png'
 import pay3Img from '../../Assets/pay3.png'
 import pay4Img from '../../Assets/pay4.png'
@@ -14,13 +15,7 @@ import './checkout.css'
 
 
 const Checkout = () => {
-    const [toggleDetails,setToggleDetails] = useState(false)
     const order = useOrderContext();
-    const resaleTickets = order.numberOfTickect * order.ticketPrice
-    const serviceFee = order.numberOfTickect * 5
-    const facilityCharge = order.numberOfTickect * 2.5
-    const processingFee = 1.5
-    const total = resaleTickets + serviceFee + facilityCharge + processingFee
 
   return (
     <div>
@@ -91,66 +86,7 @@ const Checkout = () => {
                         </div>
                     </div>
                 </div>
-                <div className='wrap-right'>
-                    <div className='header' onClick={()=>setToggleDetails(!toggleDetails)} >
-                        <h4>Total</h4>
-                        <div className="total">
-                            <h3>${total}</h3>
-                            {toggleDetails? <IoIosArrowUp /> : <IoIosArrowDown />}
-                        </div>
-                    </div>
-                    {toggleDetails &&
-                    <div className='wapped'>
-                        <div className='wrap'>
-                            <h5>Tickets</h5>
-                            <div className='Items'>
-                                <p>Resale tickets: ${order.ticketPrice} x {order.numberOfTickect}</p>
-                                <p>${resaleTickets}</p>
-                            </div>
-                        </div>
-                        <div className='wrap'>
-                            <h5>Notes From Seller</h5>
-                            <p>xfr XFER Proof of at least one dose of COVID-19 vaccination
-                                for age 5 to 11 guests ages 12 and up will be required to show
-                                proof of two dose of COVID-19 vaccination.
-                            </p>
-                        </div>
-                        <div className='wrap'>
-                            <h5>Fees</h5>
-                            <div className='Items'>
-                                <p>Service fee: $5 x {order.numberOfTickect}</p>
-                                <p>${serviceFee}</p>
-                            </div>
-                            <div className='Items'>
-                                <p>Facility Charge: $2.5 x {order.numberOfTickect}</p>
-                                <p>${facilityCharge}</p>
-                            </div>
-                            <div className='Items'>
-                                <p>Processing fee</p>
-                                <p>${processingFee}</p>
-                            </div>
-                        </div>
-                        <div className='wrap'>
-                            <h5>Delivery</h5>
-                            <div className="Items">
-                                <p>Mobile Entry</p>
-                                <p>Free</p>
-                            </div>
-                        </div>
-                        <div className='button-cancel'>Cancel Order</div>
-                    </div>}
-                    <div>
-                        <h5>* All sales Final - No refunds</h5>
-                        <div className='agreement'>
-                            <input type="checkbox" />
-                            <p>I have read and agree to the current <span>Terms of use</span>.</p>
-                        </div>
-                    </div>
-                    <div className='footer'>
-                        <button>Place Order</button>
-                        <p>* Exceptions may apply, see our Terms of use.</p>
-                    </div>
-                </div>
+                <Billing order={order} />
             </div>
         </div>
     </div>

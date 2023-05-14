@@ -138,87 +138,6 @@
     color: #015C92;
 }
 
-.payment-wrapper .wrap-right {
-    padding: 1rem;
-    border: 1px solid rgb(196, 193, 193);
-    border-radius: 5px;
-}
-
-.payment-wrapper .wrap-right .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.wrap-right .header .total {
-    display: flex;
-    align-items: center;
-}
-
-.wrap-right .wapped {
-    margin-bottom: 2rem;
-}
-
-.wrap-right .wapped .button-cancel {
-    color: #015C92;
-    font-weight: 900;
-    font-size: 15px;
-}
-
-.wrap-right .wapped .Items {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.wrap-right .wapped .wrap p {
-    margin: 0;
-    color: gray;
-    font-weight: 600;
-    font-size: 12px;
-}
-
-.wrap-right .wapped .wrap h5 {
-    margin-bottom: .3rem;
-}
-
-.wrap-right .wapped .wrap  {
-    margin: 1rem 0;
-}
-
-.wrap-right .agreement {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 1rem 0 0 0;
-}
-
-.wrap-right .agreement p {
-    margin: 0 0 0 .5rem;
-    font-size: 12px;
-}
-
-.wrap-right .agreement p span {
-    color: #015C92;
-    font-weight: 800;
-}
-
-.wrap-right .footer button {
-    width: 100%;
-    margin: 2rem 0;
-    padding: .5rem 1rem;
-    background: rgb(13, 70, 13);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.wrap-right .footer p {
-    margin: 0;
-    font-size: 8px;
-    font-weight: 900;
-}
 
 @media only screen and (min-width: 377px) {
     .payment-methode .second-methode .images-container {
@@ -238,10 +157,6 @@
     }
     .checkout-container .payment-wrapper .wrap-left{
         flex: 3;
-        margin: 0 1rem;
-    }
-    .checkout-container .payment-wrapper .wrap-right{
-        flex: 2;
         margin: 0 1rem;
     }
 }
