@@ -24,6 +24,7 @@
     color: #015C92;
     font-weight: 900;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .wrap-right .wapped .Items {
@@ -59,6 +60,10 @@
     font-size: 12px;
 }
 
+.wrap-right .agreement input {
+    cursor: pointer;
+}
+
 .wrap-right .agreement p span {
     color: #015C92;
     font-weight: 800;
@@ -73,6 +78,7 @@
     border: none;
     border-radius: 5px;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 .wrap-right .footer p {
