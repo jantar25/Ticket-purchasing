@@ -29,7 +29,7 @@ const Show = ({ticket,toggleAccordion,clicked}) => {
                     <BsThreeDotsVertical />
                 </div>
             </div>
-            <Link to={`/ticket/${ticket.id}`} target="_blank">
+            <Link to={`/ticket/${ticket.id}`} target="_blank" style={{textDecoration: 'none'}}>
                 <button>See Ticket</button>
             </Link>
         </div>
@@ -85,7 +85,7 @@ const Show = ({ticket,toggleAccordion,clicked}) => {
                         )}
                     </div>
                 </div>
-                <Link to={`/ticket/${ticket.id}`} target="_blank">
+                <Link to={`/ticket/${ticket.id}`} target="_blank" style={{textDecoration: 'none'}}>
                     <button>See Ticket</button>
                 </Link>
             </div> 

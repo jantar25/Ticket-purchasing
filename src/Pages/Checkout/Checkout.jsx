@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { useOrderContext } from '../../Context/Context'
-import NavBar from '../../Components/NavBar/NavBar'
 import Billing from '../../Components/Billing/Billing';
 import Payment from '../../Components/Payment/Payment';
 
@@ -13,7 +12,13 @@ const Checkout = () => {
 
   return (
     <div>
-        <NavBar />
+        <div className='navbar-container'>
+            <div className='navbar-left'>
+                <h2>Tickets<span className='logo'>Shows</span></h2>
+            </div>
+            <h3>CHECKOUT </h3>
+            <span>Help</span>
+        </div>
         <div className='checkout-container'>
             <div className='ticket-info'>
                 <h4>{order.ticketartist}</h4>

@@ -1,15 +1,29 @@
-import React from 'react'
+import React,{ useState} from 'react'
 import { MdDone } from 'react-icons/md'
 import {BsCreditCard2Front} from 'react-icons/bs'
-import { AiOutlinePlus,AiOutlineMinus } from 'react-icons/ai';
+import { AiOutlinePlus } from 'react-icons/ai';
 
+import PaymentForm from '../PaymentForm/PaymentForm';
 import pay1Img from '../../Assets/pay1.png'
-import pay3Img from '../../Assets/pay3.png'
 import pay4Img from '../../Assets/pay4.png'
 import pay5Img from '../../Assets/pay5.png'
 import './payment.css'
 
 const Payment = () => {
+    const [toggleForm,setToggleForm] = useState(false)
+    const [toggleCodeForm,setToggleCodeForm] = useState(false)
+    const [code,setCode] = useState('')
+
+    const handleToggleForm = () => {
+        setToggleForm(!toggleForm)
+    }
+
+    const submitCode = (e) => {
+        e.preventDefault()
+        console.log(code)
+        setCode('')
+    }
+
   return (
     <div className='wrap-left'>
         <div className='delivery-container'>
@@ -34,34 +48,53 @@ const Payment = () => {
                 <img src={pay1Img} alt="card-img" />
             </div>
             <div className='payment-methode'>
-                <div className='first-methode'>
-                    <h4>Use Credit/Debit Card</h4>
-                    <div className='first-methode-container'>
-                        <AiOutlinePlus />
-                        <div className='icon'>
-                            <BsCreditCard2Front />
+                {!toggleForm ?
+                <div>
+                    <div className='first-methode'>
+                        <h4>Use Credit/Debit Card</h4>
+                        <div className='first-methode-container' onClick={handleToggleForm}>
+                            <AiOutlinePlus />
+                            <div className='icon'>
+                                <BsCreditCard2Front />
+                            </div>
+                            <h4>Add New Card</h4>
                         </div>
-                        <h4>Add New Card</h4>
                     </div>
-                </div>
-                <hr />
-                <div className='second-methode'>
-                    <h4>Or pay with</h4>
-                    <p>By using a digital wallet and continuing past this page, 
-                        you have read and are accepting the <span>Terms of Use</span>.</p>
-                    <div className="images-container">
-                        <img src={pay4Img} alt='Paypal-img' />
-                        <img src={pay5Img} alt='klarna-img' />
+                    <hr />
+                    <div className='second-methode'>
+                        <h4>Or pay with</h4>
+                        <p>By using a digital wallet and continuing past this page, 
+                            you have read and are accepting the <span>Terms of Use</span>.</p>
+                        <div className="images-container">
+                            <img src={pay4Img} alt='Paypal-img' />
+                            <img src={pay5Img} alt='klarna-img' />
+                        </div>
                     </div>
-                </div>
+                </div> : <PaymentForm handleToggleForm={handleToggleForm} />}
                 <hr />
-                <div className='third-methode'>
-                    <AiOutlinePlus />
-                    <h4>
-                        <span>Add Credits</span>/
-                        <span>Promo Code</span>/
-                        <span>Gift Card</span>
-                    </h4>
+                <div>
+                    {!toggleCodeForm? 
+                    <div className='third-methode' onClick={()=>setToggleCodeForm(!toggleCodeForm)}>
+                        <AiOutlinePlus />
+                        <h4>Add Credits/ Promo Code/ Gift Card </h4>
+                    </div> :
+                    <div className='codeForm-container'>
+                        <h4>Add Credits / Promo Codes / Gift Cards</h4>
+                        <p>Combine up to 5 promo codes and 5 gift cards. 
+                            (Hang on to your gift cards in case of a refund.)</p>
+                        <form onSubmit={submitCode}>
+                            <p>Credit / Promo Code / Gift Card Number</p>
+                            <div className='codeInput-container'>
+                                <input
+                                    type='text'
+                                    value={code}
+                                    placeholder='Enter Code or Number'
+                                    onChange={(e)=>setCode(e.target.value)} />
+                                <button type='submit'>Apply</button>
+                            </div>
+                        </form>
+                    </div>
+                    }
                 </div>
             </div>
         </div>

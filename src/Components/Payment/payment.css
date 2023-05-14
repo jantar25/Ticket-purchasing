@@ -74,6 +74,7 @@
     color: #015C92;
     font-size: 2rem;
     margin: 1rem 0;
+    cursor: pointer;
 }
 
 .payment-methode .first-methode .first-methode-container h4,.third-methode h4 {
@@ -109,10 +110,55 @@
     color: #015C92;
 }
 
+.codeForm-container p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.codeForm-container form {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+}
+
+.codeForm-container .codeInput-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: .3rem;
+}
+
+.codeForm-container .codeInput-container input {
+    padding: .8rem;
+    width: calc(100% - 1.8rem);
+}
+
+.codeForm-container .codeInput-container button {
+    font-weight: 700;
+    color: #015C92;
+    border:1px solid #015C92;
+    padding: .8rem 1.5rem;
+    background: #eee;
+    margin-top: .5rem;
+}
+
 @media only screen and (min-width: 377px) {
     .payment-methode .second-methode .images-container {
         flex-direction: row;
         align-items: center;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .codeForm-container .codeInput-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .codeForm-container .codeInput-container input,button {
+        margin: 0 1rem 0 0;
+    }
+    .codeForm-container .codeInput-container button {
+        margin-top: 0;
     }
 }
 
