@@ -127,3 +127,10 @@ form .cancel {
 form .cancel span {
     cursor: pointer;
 }
+
+form .notification {
+    text-align: center;
+    font-size: 15px;
+    color: red;
+    font-weight: 600;
+}

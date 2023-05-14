@@ -12,6 +12,7 @@ import './paymentForm.css'
 const PaymentForm = ({handleToggleForm}) => {
   const cardInfos = useCardInfoContext()
   const setCardInfo = useSetCardInfoContext()
+  const [notification,setNotification] = useState(null)
   const [toggleAddress2,setToggleAddress2] = useState(false)
   const [inputs,setInputs] = useState({
     cardType: 'VISA',
@@ -40,7 +41,10 @@ const PaymentForm = ({handleToggleForm}) => {
   const handleSubmitForm = (e) => {
     e.preventDefault()
     if (!CardName || !cardNumber || !cardExpiration) {
-      console.log('Fill the every field of the form')
+      setNotification('Fill every field of the form')
+      setTimeout(() => {
+        setNotification(null)
+      }, 5000)
     } else {
       setCardInfo([...cardInfos,inputs])
       handleToggleForm()
@@ -145,6 +149,7 @@ const PaymentForm = ({handleToggleForm}) => {
               </div>
               <p>For when you are purchasing tickets</p>
           </div>
+          {notification && <p className='notification'>**{notification}**</p>}
           <button className='submit' type='submit' >Add New Card</button>
           <div className='cancel'>
             <span onClick={handleToggleForm}>Cancel</span>
