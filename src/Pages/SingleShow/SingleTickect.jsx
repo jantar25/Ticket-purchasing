@@ -1,9 +1,8 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 
-
-import tickets from '../../Constants/ticketsData'
 import NavBar from '../../Components/NavBar/NavBar'
+import tickets from '../../Constants/ticketsData'
 import PriceAndModal from '../../Components/PriceAndModal/PriceAndModal'
 import Footer from '../../Components/Footer/Footer'
 import './singleTicket.css'

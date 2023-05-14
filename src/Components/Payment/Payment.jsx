@@ -4,6 +4,7 @@ import {BsCreditCard2Front} from 'react-icons/bs'
 import { AiOutlinePlus } from 'react-icons/ai';
 
 import PaymentForm from '../PaymentForm/PaymentForm';
+import CreditCards from '../CreditCards/CreditCards';
 import pay1Img from '../../Assets/pay1.png'
 import pay4Img from '../../Assets/pay4.png'
 import pay5Img from '../../Assets/pay5.png'
@@ -52,6 +53,7 @@ const Payment = () => {
                 <div>
                     <div className='first-methode'>
                         <h4>Use Credit/Debit Card</h4>
+                        <CreditCards />
                         <div className='first-methode-container' onClick={handleToggleForm}>
                             <AiOutlinePlus />
                             <div className='icon'>

@@ -1,14 +1,21 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import { useNavigate } from 'react-router-dom';
 
 import { useOrderContext } from '../../Context/Context'
 import Billing from '../../Components/Billing/Billing';
 import Payment from '../../Components/Payment/Payment';
-
 import './checkout.css'
 
 
 const Checkout = () => {
+    const navigate = useNavigate()
     const order = useOrderContext();
+
+    useEffect(()=>{
+        if(order.numberOfTickect === 0) {
+            navigate('/')
+        }
+    },[navigate,order.numberOfTickect])
 
   return (
     <div>
