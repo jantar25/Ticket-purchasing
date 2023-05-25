@@ -1,9 +1,9 @@
-import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Tickets from './Pages/ShowsTickeks/Tickets';
-import SingleTickect from './Pages/SingleShow/SingleTickect';
-import Checkout from './Pages/Checkout/Checkout';
-import ScrollToTop from './Components/ScrollToTop';
+import Tickets from "./Pages/ShowsTickeks/Tickets";
+import SingleTickect from "./Pages/SingleShow/SingleTickect";
+import Checkout from "./Pages/Checkout/Checkout";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
